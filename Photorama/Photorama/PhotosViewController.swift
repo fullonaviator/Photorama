@@ -41,13 +41,15 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         let photo = photosDataSource.photos[indexPath.item]
         
         
-        guard let  urlString = photo.url_h,
-            let url = URL(string: urlString) else {
-                return
-        }
+        
         
         guard let thumbnailCell = cell as? ThumbnailCell else {
             return
+        }
+        
+        guard let  urlString = photo.url_h,
+            let url = URL(string: urlString) else {
+                return
         }
         
         
